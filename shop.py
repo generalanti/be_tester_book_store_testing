@@ -60,9 +60,8 @@ driver.find_element(By.CSS_SELECTOR, '#menu-item-40').click()
 driver.find_element(By.CSS_SELECTOR, '.product-categories .cat-item-19 a').click()
 
 # Добавьте тест, что отображается три товара
-three_el = wait.until(lambda method: len(driver.find_elements(By.CSS_SELECTOR, 'ul li.product')) == 3)
-if three_el:
-    print("3 products")
+three_el = driver.find_elements(By.CSS_SELECTOR, 'ul li.product')
+assert len(three_el) == 3
 
 ''' Shop: сортировка товаров'''
 # Откройте https://practice.automationtesting.in/
