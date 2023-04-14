@@ -94,11 +94,8 @@ select.select_by_value('price-desc')
 price_desc_sorting_selected = driver.find_element(By.CSS_SELECTOR, 'option[value="price-desc"]').get_attribute(
     'selected')
 assert price_desc_sorting_selected is not None
-'''
 
-'''
-Shop: отображение, скидка
-товара
+'''Shop: отображение, скидка товара'''
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')
 
@@ -262,3 +259,5 @@ wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.woocommerce-than
 
 # Используя явное ожидание, проверьте что в Payment Method отображается текст "Check Payments"
 wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.method strong'), 'Check Payments'))
+
+driver.quit()

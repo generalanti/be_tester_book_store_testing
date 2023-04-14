@@ -46,3 +46,5 @@ driver.find_element(By.CSS_SELECTOR, '#email').send_keys('gosha2000@mail.ru')
 
 # Нажмите на кнопку "SUBMIT"
 driver.find_element(By.CSS_SELECTOR, '#submit').click()
+
+driver.quit()

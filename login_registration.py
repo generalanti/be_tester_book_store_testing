@@ -59,3 +59,6 @@ driver.find_element(By.CSS_SELECTOR, 'input[name="login"]').click()
 
 # Добавьте проверку, что на странице есть элемент "Logout"
 wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.woocommerce-MyAccount-navigation a[href*="logout"]')))
+
+
+driver.quit()
