@@ -23,8 +23,6 @@ driver.close()
 driver.switch_to.window(first_browser_tab)
 driver.maximize_window()
 
-
-
 ''' Registration_login: регистрация аккаунта'''
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')

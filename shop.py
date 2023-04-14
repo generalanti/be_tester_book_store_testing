@@ -24,7 +24,7 @@ driver.close()
 driver.switch_to.window(first_browser_tab)
 driver.maximize_window()
 
-''' Shop: отображение страницы товара
+''' Shop: отображение страницы товара'''
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')
 
@@ -42,9 +42,8 @@ driver.find_element(By.CSS_SELECTOR, '.products.masonry-done a[href*="html5-form
 
 # Добавьте тест, что заголовок книги назвается: "HTML5 Forms"
 wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'h1[itemprop="name"]'), 'HTML5 Forms'))
-'''
 
-''' Shop: количество товаров в категории
+''' Shop: количество товаров в категории'''
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')
 
@@ -64,9 +63,8 @@ driver.find_element(By.CSS_SELECTOR, '.product-categories .cat-item-19 a').click
 three_el = wait.until(lambda method: len(driver.find_elements(By.CSS_SELECTOR, 'ul li.product')) == 3)
 if three_el:
     print("3 products")
-'''
 
-''' Shop: сортировка товаров
+''' Shop: сортировка товаров'''
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')
 
@@ -94,11 +92,14 @@ select.select_by_value('price-desc')
 
 # Добавьте тест, что в селекторе выбран вариант сортировки по цене от большей к меньшей
 # • Используйте проверку по value
-price_desc_sorting_selected = driver.find_element(By.CSS_SELECTOR, 'option[value="price-desc"]').get_attribute('selected')
+price_desc_sorting_selected = driver.find_element(By.CSS_SELECTOR, 'option[value="price-desc"]').get_attribute(
+    'selected')
 assert price_desc_sorting_selected is not None
 '''
 
-''' Shop: отображение, скидка товара
+'''
+Shop: отображение, скидка
+товара
 # Откройте https://practice.automationtesting.in/
 driver.get('https://practice.automationtesting.in/')
 
@@ -129,9 +130,8 @@ driver.find_element(By.CSS_SELECTOR, '.zoom img').click()
 # Добавьте явное ожидание и закройте предпросмотр нажав на крестик (кнопка вверху справа)
 close_button = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.pp_close')))
 close_button.click()
-'''
 
-''' Shop: проверка цены в корзине
+''' Shop: проверка цены в корзине'''
 # Откройте https://practice.automationtesting.in/ # в этом тесте логиниться не нужно
 driver.get('https://practice.automationtesting.in/')
 
@@ -161,9 +161,8 @@ wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'td[data-title="Su
 
 # Используя явное ожидание, проверьте что в Total отобразилась стоимость
 wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'td[data-title="Total"] > span')))
-'''
 
-''' Shop: работа в корзине
+''' Shop: работа в корзине'''
 # Иногда, даже явные ожидания не помогают избежать ошибки при нахождении элемента, этот сценарий один из таких, используйте time.sleep()
 # Откройте https://practice.automationtesting.in/ # в этом тесте логиниться не нужно
 driver.get('https://practice.automationtesting.in/')
@@ -212,9 +211,8 @@ driver.find_element(By.CSS_SELECTOR, 'input[name="apply_coupon"]').click()
 
 # Добавьте тест, что возникло сообщение: "Please enter a coupon code."
 wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.woocommerce-error li'), 'Please enter a coupon code'))
-'''
 
-''' Shop: покупка товара
+''' Shop: покупка товара'''
 # Откройте https://practice.automationtesting.in/ # в этом тесте логиниться не нужно
 driver.get('https://practice.automationtesting.in/')
 
@@ -265,4 +263,3 @@ wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.woocommerce-than
 
 # Используя явное ожидание, проверьте что в Payment Method отображается текст "Check Payments"
 wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.method strong'), 'Check Payments'))
-'''
